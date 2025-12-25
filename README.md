@@ -1,16 +1,42 @@
-# React + Vite
+💬 MERN Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time chat application built with the MERN stack and Socket.io that enables users to communicate instantly.
+The app supports secure authentication, real-time messaging, image sharing, and user profile management.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+User Registration & Login (JWT Authentication)
 
-## React Compiler
+Real-time 1-to-1 messaging using Socket.io
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Send & receive text and image messages
 
-## Expanding the ESLint configuration
+View available users and start conversations
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Update user profile bio
+
+Fast, responsive UI built with React + Vite
+
+🧑‍💻 Use Cases
+
+Instant private chatting between users
+
+Sharing images in real time
+
+Maintaining personal chat profiles
+
+Learning real-time communication using Socket.io
+
+Building scalable MERN-based applications
+
+🛠 Tech Stack
+
+Frontend: React.js (Vite)
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+
+Real-time Communication: Socket.io
+
+Authentication: JWT
