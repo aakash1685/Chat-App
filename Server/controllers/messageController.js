@@ -1,3 +1,4 @@
+import cloudinary from "../lib/cloudinary.js";
 import messageModel from "../models/messageModel.js";
 import userModel from "../models/userModel.js";
 
@@ -32,7 +33,7 @@ export const getUsersForSidebar = async (req, res) => {
 };
 
 //Get All messages for Selected user
-export const getMessages = async (res, res) => {
+export const getMessages = async (req, res) => {
   try {
     const { id: selectedUser } = req.params;
     const myId = req.user._id;
@@ -72,3 +73,37 @@ export const markMessageAsSeen = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
+
+//Send message to selcted user
+export const sendMessage = async(req,res) => {
+  try {
+    const {text,image} = req.body;
+    const receiverId = req.params.id;
+    const senderId = req.user._id;
+    
+    let imageUrl;
+    if(image) {
+      const uploadResponse = await cloudinary.uploader.upload(image);
+      imageUrl = uploadResponse.secure_url;
+    }
+
+    const newMessage = await messageModel.create({
+      senderId,
+      receiverId,
+      text,
+      image: imageUrl
+    });
+
+    res.json({
+      success: true,
+      newMessage
+    });
+  
+
+  } catch (error) {
+    console.log("Error: ", error.message);
+    res.json({
+      success: false, message: error.message
+    })
+  }
+}

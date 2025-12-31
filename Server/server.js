@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { connectDB } from "./lib/db.js";
 import userRouter from "./routes/userRouter.js";
+import messageRouter from "./routes/MessageRouter.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -16,6 +17,7 @@ app.use("/", (req, res) => {
   res.send("Server is live");
 });
 app.use("/api/auth", userRouter);
+app.use("/api/message", messageRouter);
 
 (async ()=>{
     await connectDB();
